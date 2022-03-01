@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+html, .login-img > img {
+height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Overpass", sans-serif;
+  margin: 0;
+  height: inherit;
+}
+
+.detail-box {
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+
+.details {
+  font-size: 20px;
+  font-family: 'Helvetica', Times, serif;
+  text-align: left;
+  align-items: left;
+  font-size: 14pt;
+}
+
+.team-card img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 140px;
+  height: 140px;
+}
+
+.team-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: rgba(184, 184, 184, 0.637);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  max-width: 170px;
+  min-width: 170px;
+}
+
+.team-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+  padding: 30px;
+}
+
+
+.navigation {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  font-size: 28px;
+  justify-content: flex-end;
+}
+
+.navigation-links {
+  display: flex;
+}
+
+.nav-brand-name {
+  font-family: inherit;
+  margin-right: auto;
+  align-self: center;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 30px;
+}
+
+.nav-link:hover {
+  background-color: #4382CD;
+}
+
+footer {
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-family: inherit;
+  padding: 20px;
+  width: 100%;
+  font-size: 15px;
+  align-self: flex-end;
+}
+
+.login-page main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background: #000F96;
+  background-image : url('../img/PawPatternBig.png');
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  align-items: center;
+  /*background: #000F96;
+  background-image : url('../img/PawPattern.png');*/
+  width: 428px;
+  height: 90%;
+}
+
+.login-box div {
+  display: inline-block;
+  margin-top: 90%;
+  margin-bottom: 30%;
+}
+
+.login-detail input::placeholder {
+  color: white;
+}
+
+.login-detail input:focus {
+  color: white;
+}
+
+.login-img {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  border-radius: 50%;
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  background-color: #000F96;
+}
+
+.login-title {
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: 10%;
+  font-size: 5rem;
+}
+
+.primary-btn {
+  background-color: white;
+  color: #000F96;
+  width: 333px;
+  height: 43px;
+  margin: 0 auto;
+  margin-top: 15px;
+  display: block;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.second-btn {
+  background-color: #000F96;
+  color: white;
+  width: 333px;
+  height: 43px;
+  margin: 0 auto;
+  margin-top: 15px;
+  display: block;
+  border-radius: 10px;
+  font-size: 24px;
+  border: 3px solid white;
+}
+
+.login-img > img {
+  object-fit: contain;
+}
+
+.login-detail {
+  align-self: flex-start;
+  padding: 10px;
+  padding-bottom: 0;
+  border-bottom: 1px solid white;
+}
+
+.login-detail label {
+  padding-top: 10px;
+  margin-right: 10px;
+}
+
+.login-detail input {
+  background-color: inherit;
+  outline: none;
+}
+
+.login-detail input {
+  border: none;
+}
+
+.primary-btn:hover, .primary-btn:focus, .second-btn:hover, .second-btn:focus{
+  cursor: pointer;
+  box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.6);
+  transform: translateY(-0.1em);
+}
