@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="William, Taylor, Jenna, Wenyi">
+    <meta name="description" content="Daily Schedule page for our Ikuzo website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bark!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&family=Reggae+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/dog-icon.png">
+</head>
+<body class="login-page">
+    <header class="navigation">
+        <p class="nav-brand-name"><a class="text-white" href="index.html">BARK!</a></p>
+        <nav class="navbar navbar-expand-lg nav-bg navigation-links">
+            <ul class="nav nav-pills navbar-fixed-top">
+                <li class="nav-item" role="presentation"><a class="nav-link text-white" href="aboutUs.html">About</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link text-white" href="aboutUs.html">Companions</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link text-white" href="aboutUs.html">Plans</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="index-box">
+            <h1>Daily Reminders</h1>
+            <div id="tasks-root" class="mb-3">
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <button class="btn btn-sm btn-warning"><span class="material-icons-outlined">Done</span></button>
+                    Take vitamins
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-sm btn-warning"><span class="material-icons-outlined">Done</span></button>
+                    Take medications
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-sm btn-warning"><span class="material-icons-outlined">Done</span></button>
+                    Feed Mushu
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-sm btn-warning"><span class="material-icons-outlined">Done</span></button>
+                    Drink water bottle twice
+                </li>
+                </ul>
+            </div>
+            <div class="form">
+                <div class="form-group mb-1">
+                <input type="text" id="task-input" class="form-control" placeholder="What else do you have to do?"/>
+                </div>
+                <div class="form-group">
+                <button type="button" id="add-task-button" class="btn btn-primary">Add task to list</button>
+                </div>
+            </div>
+            <img src="img/tempdog.gif" width="300" />
+          </section>
+    </main>
+</body>
