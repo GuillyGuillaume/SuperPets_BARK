@@ -92,8 +92,28 @@ html, .login-img>img {
   background-color: #4382CD;
 }
 
-.pet-speech img, .pet-speech p {
+.sched-head {
+  margin: 2.2rem;
+}
+
+.pet-speech {
+  margin-top: 5rem;
   display: flex;
+}
+
+.pet-speech img {
+  flex: 1;
+}
+
+.pet-speech p {
+  height: 5rem;
+  border: 3px solid black;
+  border-radius: 10px;
+  color: black;
+}
+
+.form {
+  margin-bottom: 20px;
 }
 
 footer {
