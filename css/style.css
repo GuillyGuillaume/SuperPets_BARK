@@ -112,6 +112,14 @@ html, .login-img>img {
   color: black;
 }
 
+li:nth-child(2) {
+  background-color: #EEEEEE;
+}
+
+li:last-child {
+  background-color: #EEEEEE;
+}
+
 .form {
   margin-bottom: 20px;
 }
