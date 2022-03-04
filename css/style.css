@@ -63,12 +63,18 @@ html, .login-img>img {
   display: flex;
   background-color: black;
   align-items: center;
-  font-size: 28px;
+  font-size: 16px;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .navigation-links {
   display: flex;
+}
+
+.space {
+  flex: 1;
+  flex-grow: 1;
 }
 
 .nav-brand-name {
@@ -77,7 +83,7 @@ html, .login-img>img {
   align-self: center;
   padding-top: 15px;
   padding-left: 20px;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .nav-link:hover {
@@ -112,10 +118,10 @@ footer {
   /*background: #000F96;
   background-image : url('../img/PawPattern.png');*/
   width: 428px;
-  height: 90%;
+  height: 100%;
 }
 
-.index-box {
+.content-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,7 +129,7 @@ footer {
   align-items: center;
   background: white;
   width: 428px;
-  height: 90%;
+  height: 100%;
 }
 
 .chatbox {
@@ -133,7 +139,6 @@ footer {
   color: black;
 }
 
-<<<<<<< HEAD
 .chatbox > div {
   display: flex;
   flex-direction: column;
@@ -142,9 +147,6 @@ footer {
 }
 
 .chatbox > p {
-=======
-.chatbox>p {
->>>>>>> 9062c2ab21cee6a08fefaf47cdd81a06fb91faf4
   padding: 2%;
 }
 
@@ -258,11 +260,11 @@ footer {
   color:white;
 }
 
-/* css for customize page*/
+/* css for customize page
 img {
   width: 250px;
   height: 150px;
-}
+}*/
 
 /* #customize-page {
   display: flex;
@@ -313,7 +315,6 @@ img {
 
 #db_adopt {
   margin: 10px;
-
 }
 
 /*@media (min-width: 640px) {
