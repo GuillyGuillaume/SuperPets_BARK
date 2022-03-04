@@ -70,6 +70,9 @@ html, .login-img>img {
   width: 100%;
 }
 
+.navigation>nav>ul>li>a {
+  background-color: black;
+}
 .navigation-links {
   display: flex;
 }
@@ -336,10 +339,15 @@ footer {
   align-items: flex-start
 }
 
-#pets h1 {
+.customize-page>main>.content-box>a {
+  text-align: center;
+  font: size 24px;
+}
+
+/* #pets h1 {
   text-align: center;
   color: ivory;
-}
+} */
 
 /*adjust table */
 #adopt_info {
@@ -354,7 +362,6 @@ footer {
 }
 
 #info {
-  background-color: ivory;
   width: fit-content;
   margin: 10px;
   border-style: solid;
