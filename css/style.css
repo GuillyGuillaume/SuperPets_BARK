@@ -489,13 +489,16 @@ img {
   background-image: url('../img/PawPatternBig.png')
 }
 
-h1, p {
+/* h1, p {
+  color: aliceblue;
+} */
+.esa-page>main>h1 {
   color: aliceblue;
 }
 
 .esa-page>main>p {
-  
-  width:fit-content;
+  color: aliceblue;
+  width: fit-content;
   content: 50%;
   margin: 10px;
   border-style: solid;
