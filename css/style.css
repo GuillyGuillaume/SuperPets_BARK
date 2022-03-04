@@ -139,14 +139,14 @@ footer {
   color: black;
 }
 
-.chatbox > div {
+.chatbox>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 5px;
 }
 
-.chatbox > p {
+.chatbox>p {
   padding: 2%;
 }
 
@@ -256,8 +256,8 @@ footer {
   cursor: pointer;
 }
 
-.slidecontainer > p {
-  color:white;
+.slidecontainer>p {
+  color: white;
 }
 
 /* css for customize page
@@ -288,7 +288,7 @@ img {
 
 #pets h1 {
   text-align: center;
-  color:ivory;
+  color: ivory;
 }
 
 /*adjust table */
@@ -433,57 +433,79 @@ img {
   }
 
   /* css for customize page*/
-  #dog_pc {
-    width: 250px;
-    height: 150px;
-  }
+#dog_pc {
+  width: 250px;
+  height: 150px;
+}
 
-  .customize-page {
-    background: #000F96;
-    background-image: url('../img/PawPatternBig.png')
-  }
+.customize-page {
+  background: #000F96;
+  background-image: url('../img/PawPatternBig.png')
+}
 
-  #pets {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start
-  }
+#pets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start
+}
 
-  #pets h1 {
-    text-align: center;
-    color: ivory;
-  }
+#pets h1 {
+  text-align: center;
+  color: ivory;
+}
 
-  /*adjust table */
-  #adopt_info {
-    /* width: 50%; */
-    width: fit-content;
-    margin: 5px;
-  }
+/*adjust table */
+#adopt_info {
+  /* width: 50%; */
+  width: fit-content;
+  margin: 5px;
+}
 
-  #adopt_info, th, td {
-    border: 1px solid;
-    text-align: center;
-  }
+#adopt_info, th, td {
+  border: 1px solid;
+  text-align: center;
+}
 
-  #info {
-    background-color: ivory;
-    width: fit-content;
-    margin: 10px;
-    border-style: solid;
-    border-width: 5px;
-    padding: 20px;
-    align-content: center;
-  }
+#info {
+  background-color: ivory;
+  width: fit-content;
+  margin: 10px;
+  border-style: solid;
+  border-width: 5px;
+  padding: 20px;
+  align-content: center;
+}
 
-  #db_adopt {
-    margin: 10px;
+#db_adopt {
+  margin: 10px;
 
-  }
+}
 
-  /*@media (min-width: 640px) {
+/* Styling for ESA page*/
+.esa-page {
+  background: #000F96;
+  background-image: url('../img/PawPatternBig.png')
+}
+
+h1, p {
+  color: aliceblue;
+}
+
+.esa-page>main>p {
+  
+  width:fit-content;
+  content: 50%;
+  margin: 10px;
+  border-style: solid;
+  border-width: 5px;
+  padding: 20px;
+  align-content: center;
+
+}
+
+/*@media (min-width: 640px) {
 
 }
 */
