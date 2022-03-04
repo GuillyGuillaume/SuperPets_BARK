@@ -289,8 +289,15 @@ footer {
   margin: 4px, 4px;
   padding: 4px;
   overflow: auto;
-  text-align: justify;
   scrollbar-gutter: stable;
+}
+
+.customize-page>main>.content-box {
+  width: 428px;
+  height: 720px;
+  margin: auto;
+  padding: 4px;
+  text-align: justify;
 }
 
 #pets {
@@ -338,9 +345,9 @@ footer {
   background-image: url('../img/PawPatternBig.png')
 }
 
-.esa-page>main>.content-box> {
+.esa-page>main>.content-box {
   width: 428px;
-  height: 666px;
+  height: 720px;
   margin: auto;
   padding: 4px;
   overflow: auto;
@@ -349,12 +356,14 @@ footer {
   margin: auto;
 }
 
-.esa-page>main>h1 {
-  color: aliceblue;
+.esa-page>main>.content-box>h1 {
+  color: #000F96;
+  text-align: center;
 }
 
-.esa-page>main>p {
-  color: aliceblue;
+.esa-page>main>.content-box>p {
+  text-align: center;
+  color: #000F96;
   width: fit-content;
   content: 50%;
   margin: 10px;
