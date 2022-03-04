@@ -260,22 +260,31 @@ footer {
   color: white;
 }
 
-/* css for customize page
-img {
+
+/* css for customize page*/
+#dog_pc {
   width: 250px;
   height: 150px;
-}*/
+}
 
-/* #customize-page {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start
-} */
 .customize-page {
+  display: flex;
+  flex-direction: column;
+  font-family: "Overpass", sans-serif;
+  margin: 0;
+  height: inherit;
   background: #000F96;
   background-image: url('../img/PawPatternBig.png')
+}
+
+.customize-page>main>.content-box>#pets {
+  width: 428px;
+  height: 666px;
+  margin: 4px, 4px;
+  padding: 4px;
+  overflow: auto;
+  text-align: justify;
+  scrollbar-gutter: stable;
 }
 
 #pets {
@@ -313,8 +322,41 @@ img {
   align-content: center;
 }
 
-#db_adopt {
+#bt_adopt {
   margin: 10px;
+}
+
+/* Styling for ESA page*/
+.esa-page {
+  background: #000F96;
+  background-image: url('../img/PawPatternBig.png')
+}
+
+.esa-page>main>.content-box> {
+  width: 428px;
+  height: 666px;
+  margin: auto;
+  padding: 4px;
+  overflow: auto;
+  text-align: justify;
+  scrollbar-gutter: stable;
+  margin: auto;
+}
+
+.esa-page>main>h1 {
+  color: aliceblue;
+}
+
+.esa-page>main>p {
+  color: aliceblue;
+  width: fit-content;
+  content: 50%;
+  margin: 10px;
+  border-style: solid;
+  border-width: 5px;
+  padding: 20px;
+  align-content: center;
+
 }
 
 /*@media (min-width: 640px) {
@@ -432,81 +474,7 @@ img {
     color: white;
   }
 
-  /* css for customize page*/
-#dog_pc {
-  width: 250px;
-  height: 150px;
-}
-
-.customize-page {
-  background: #000F96;
-  background-image: url('../img/PawPatternBig.png')
-}
-
-#pets {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start
-}
-
-#pets h1 {
-  text-align: center;
-  color: ivory;
-}
-
-/*adjust table */
-#adopt_info {
-  /* width: 50%; */
-  width: fit-content;
-  margin: 5px;
-}
-
-#adopt_info, th, td {
-  border: 1px solid;
-  text-align: center;
-}
-
-#info {
-  background-color: ivory;
-  width: fit-content;
-  margin: 10px;
-  border-style: solid;
-  border-width: 5px;
-  padding: 20px;
-  align-content: center;
-}
-
-#db_adopt {
-  margin: 10px;
-
-}
-
-/* Styling for ESA page*/
-.esa-page {
-  background: #000F96;
-  background-image: url('../img/PawPatternBig.png')
-}
-
-/* h1, p {
-  color: aliceblue;
-} */
-.esa-page>main>h1 {
-  color: aliceblue;
-}
-
-.esa-page>main>p {
-  color: aliceblue;
-  width: fit-content;
-  content: 50%;
-  margin: 10px;
-  border-style: solid;
-  border-width: 5px;
-  padding: 20px;
-  align-content: center;
-
-}
+ 
 
 /*@media (min-width: 640px) {
 
