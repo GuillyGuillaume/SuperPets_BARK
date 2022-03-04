@@ -60,6 +60,8 @@ html, .login-img>img {
 
 
 .navigation {
+  position: fixed;
+  bottom: 0;
   display: flex;
   background-color: black;
   align-items: center;
@@ -88,6 +90,10 @@ html, .login-img>img {
 
 .nav-link:hover {
   background-color: #4382CD;
+}
+
+.pet-speech img, .pet-speech p {
+  display: flex;
 }
 
 footer {
