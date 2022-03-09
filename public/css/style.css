@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html, .login-img>img {
+html {
   height: 100%;
 }
 
@@ -13,6 +13,8 @@ body {
   margin: 0;
   height: 100%;
 }
+
+/*about us css*/
 
 .aboutUs-text {
   justify-content: center;
@@ -59,6 +61,7 @@ body {
   padding: 30px;
 }
 
+/*nav CSS*/
 
 .navigation {
   position: fixed;
@@ -102,22 +105,6 @@ body {
   color: white;
 }
 
-.pet-speech {
-  margin-top: 5rem;
-  display: flex;
-}
-
-.pet-speech img {
-  flex: 1;
-}
-
-.pet-speech p {
-  height: 5rem;
-  border: 3px solid black;
-  border-radius: 10px;
-  color: black;
-}
-
 .slidecontainer {
   display: flex;
   width: 100%;
@@ -140,10 +127,6 @@ body {
   width: 170px;
 }
 
-.form {
-  margin-bottom: 20px;
-}
-
 footer {
   color: white;
   background-color: black;
@@ -164,18 +147,6 @@ main {
   height: auto;
 }
 
-.login-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  align-items: center;
-  /*background: #000F96;
-  background-image : url('../img/PawPattern.png');*/
-  width: 428px;
-  height: 100%;
-}
-
 .content-box {
   display: flex;
   flex-direction: column;
@@ -189,7 +160,7 @@ main {
 
 .chatbox {
   width: 80%;
-  border: 3px solid black;
+  border: 4px solid black;
   border-radius: 10px;
   color: black;
 }
@@ -198,11 +169,23 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5px;
+  padding: 5%;
 }
 
-.chatbox>p {
-  padding: 2%;
+.chatbox > p {
+  padding: 5%;
+}
+
+ /* log in css
+ 
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  align-items: center;
+  width: 428px;
+  height: 100%;
 }
 
 .login-box div {
@@ -292,25 +275,7 @@ main {
   box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.6);
   transform: translateY(-0.1em);
 }
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #04AA6D;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #04AA6D;
-  cursor: pointer;
-}
-
+*/
 
 /* css for customize page*/
 
