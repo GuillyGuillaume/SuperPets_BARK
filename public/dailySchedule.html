@@ -13,10 +13,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/dog-icon.png">
 </head>
-<body class="login-page">
+<body>
     <main>
         <section class="content-box">
-            <h1 class="sched-head">Daily Reminders</h1>
+            <h1 class="page-title">Daily Reminders</h1>
+
+            <div class="spacer"></div>
+
             <div id="tasks-root" class="mb-3">
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -39,23 +42,26 @@
             </div>
             <div class="form">
                 <div class="form-group mb-1">
-                <input type="text" id="task-input" class="form-control" placeholder="Any other daily tasks?"/>
+                    <input type="text" id="task-input" class="form-control" placeholder="Any other daily tasks?"/>
                 </div>
                 <div class="form-group">
-                <button type="button" id="add-task-button" class="btn btn-primary">Add task to list</button>
+                    <button type="button" id="add-task-button" class="btn btn-primary">Add task to list</button>
                 </div>
             </div>
-            <div class="pet-speech">
-                <img src="img/tempdog.gif" width="225"/>
+            <div class="chatbox">
                 <p><a href="weeklySchedule.html">Click here to see your weekly schedule!</a></p>
             </div>
+            <img src="img/tempdog.gif" width="300"/>
+
+            <div class="spacer"></div>
+
             <header class="navigation">
                 <p class="nav-brand-name"><a class="text-white" href="index.html">BARK!</a></p>
                 <nav class="navbar navigation-links">
-                    <ul class="nav nav-pills navbar-fixed-top">
+                    <ul class="nav navbar-fixed-top">
                         <li class="nav-item" role="presentation"><a class="nav-link text-white" href="aboutUs.html">About</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link text-white" href="pet_customize.html">Pets</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-white" href="dailySchedule.html">Schedules</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-white" href="dailySchedule.html">Plans</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link text-white" href="esa.html">ESA</a></li>
                     </ul>
                 </nav>

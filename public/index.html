@@ -13,34 +13,45 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/dog-icon.png">
 </head>
-<body class="login-page">
+<body>
     <main>
         <section class="content-box">
-            <h1>Daily Checkin</h1>
+            <h1 class="page-title">Daily Checkin</h1>
+
             <div class="spacer"></div>
+
             <div class="chatbox">
-                <p>Hi, Jane! It’s 12:34 PM, and you are halfway through your classes for today. How are you feeling?</p>
-                <div class="slidecontainer">
+                <p>
+                    Hi, Jane! It’s 12:34 PM, and you are halfway through your classes for today. How are you feeling?
+                </p>
+                <div>
                     <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                    <p></p>
-                    <p>____😒______😔______😐______🙂______😀_</p>
+                    <div class="slidecontainer">
+                        <div>😒</div>
+                        <div>😔</div>
+                        <div>😐</div>
+                        <div>🙂</div>
+                        <span>😀</span>
+                    </div>
                     <a href="dailySchedule.html"><button class="btn btn-sm btn-warning"><span class="material-icons-outlined" >Continue</span></button></a>
                 </div>
             </div>
             <img src="img/tempdog.gif" width="300"/>
+
+            <div class="spacer"></div>
+
             <header class="navigation">
                 <p class="nav-brand-name"><a class="text-white" href="index.html">BARK!</a></p>
                 <nav class="navbar navigation-links">
-                    <ul class="nav nav-pills navbar-fixed-top">
+                    <ul class="nav navbar-fixed-top">
                         <li class="nav-item" role="presentation"><a class="nav-link text-white" href="aboutUs.html">About</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link text-white" href="pet_customize.html">Pets</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-white" href="dailySchedule.html">Schedules</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-white" href="dailySchedule.html">Plans</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link text-white" href="esa.html">ESA</a></li>
                     </ul>
                 </nav>
             </header>
         </section>
     </main>
-    
 </body>
 </html>
