@@ -82,6 +82,7 @@ body {
 .spacer {
   flex: 1;
   flex-grow: 1;
+  flex-basis: 100;
   min-height: 60px;
 }
 
@@ -203,6 +204,12 @@ main {
   margin: 10px;
 }
 
+.form-box {
+  justify-content: left;
+  align-items: left;
+  width: 350px;
+  padding: 10px;
+}
 
  /* log in css
  

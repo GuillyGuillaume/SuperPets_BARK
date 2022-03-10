@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { AboutScreen } from './About';
 import { HomeScreen } from './Home';
 import { DailyScreen } from './DailyPlan';
+import { WeeklyScreen } from './WeeklyPlan';
+import { PetScreen } from './Pets';
+import { EsaScreen } from './Esa';
 import { NavBar } from './Navigation';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -13,6 +16,9 @@ function App() {
           <Route exact path="/" element={<HomeScreen />}></Route>
           <Route path="/about" element={<AboutScreen />}></Route>
           <Route path="/dailyPlan" element={<DailyScreen />}></Route>
+          <Route path="/weeklyPlan" element={<WeeklyScreen />}></Route>
+          <Route path="/pets" element={<PetScreen />}></Route>
+          <Route path="/esa" element={<EsaScreen />}></Route>
           <Route path="*" element={<HomeScreen />} />
         </Routes>
       </main>
