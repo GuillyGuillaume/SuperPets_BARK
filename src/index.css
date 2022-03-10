@@ -211,6 +211,10 @@ main {
   padding: 10px;
 }
 
+.survey {
+  height: 580px;
+}
+
  /* log in css
  
 .login-box {
