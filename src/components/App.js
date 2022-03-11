@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { AboutScreen } from './About';
 import { HomeScreen } from './Home';
 import { DailyScreen } from './DailyPlan';
 import { WeeklyScreen } from './WeeklyPlan';
 import { PetScreen } from './Pets';
 import { EsaScreen } from './Esa';
-import { NavBar } from './Navigation';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {

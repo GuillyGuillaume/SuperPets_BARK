@@ -35,28 +35,28 @@ export function AboutScreen() {
             <AboutUsDetails />
             <div className="aboutUs-cards">
                 <div className="team-card">
-                    <img src="img/user-avatar.png" alt="profile pic" />
+                    <img src="img/TaylorPFP.jpg" alt="profile pic" />
                     <p></p>
                     <p><strong>Taylor Jackson</strong></p>
-                    <p>Pronouns:</p>
-                    <p>Email:</p>
-                    <p>Roles:</p>
+                    <p>Pronouns: she/her</p>
+                    <p>Email: tyj10@uw.edu</p>
+                    <p>Roles: Project Manager</p>
                 </div>
                 <div className="team-card">
-                    <img src="img/user-avatar.png" alt="profile pic" />
+                    <img src="img/WenyiPFP.jpeg" alt="profile pic" />
                     <p></p>
                     <p><strong>Wenyi Sun</strong></p>
-                    <p>Pronouns:</p>
-                    <p>Email:</p>
-                    <p>Roles:</p>
+                    <p>Pronouns: she/her</p>
+                    <p>Email: wenyis@uw.edu</p>
+                    <p>Roles: UI/UX Designer</p>
                 </div>
                 <div className="team-card">
-                    <img src="img/user-avatar.png" alt="profile pic" />
+                    <img src="img/JennaPFP.jpeg" alt="profile pic" />
                     <p></p>
                     <p><strong>Jenna Wapstra</strong></p>
-                    <p>Pronouns:</p>
-                    <p>Email:</p>
-                    <p>Roles:</p>
+                    <p>Pronouns: she/her</p>
+                    <p>Email: jwapstra@uw.edu</p>
+                    <p>Roles: Research</p>
                 </div>
                 <div className="team-card">
                     <img src="img/WilliamPFP.jpg" alt="profile pic" />
@@ -64,7 +64,7 @@ export function AboutScreen() {
                     <p><strong>William Zhang</strong></p>
                     <p>Pronouns: he/him</p>
                     <p>Email: wzhang26@uw.edu</p>
-                    <p>Roles: front/back end Dev</p>
+                    <p>Roles: Front/Back end Dev</p>
                 </div>
             </div>
 

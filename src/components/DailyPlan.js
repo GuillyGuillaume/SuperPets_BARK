@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import { DailyTasks } from './DailyTasks';
 import { NavBar } from './Navigation';
 import { getDatabase, ref, set as fbset, onValue } from 'firebase/database';
 import { Button, Card, Form } from 'react-bootstrap';
@@ -70,14 +69,11 @@ export function DailyScreen() {
         <section className="content-box">
         <h1 className="page-title">Daily Reminders</h1>
         <div className="spacer"></div>
+        <div className="daily-tasks">
             {todos.map((todo, index) => (
-                <Todo
-                key={index}
-                index={index}
-                todo={todo}
-                removeTodo={removeTodo}
-                />
+                <Todo key={index} index={index} todo={todo} removeTodo={removeTodo} />
             ))}
+        </div>
         <FormTodo addTodo={addTodo} />
         <div className="chatbox">
         <p><a onClick={handleClick}>Click here to see your weekly schedule!</a></p>
