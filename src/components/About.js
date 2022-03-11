@@ -64,7 +64,7 @@ export function AboutScreen() {
                     <p><strong>William Zhang</strong></p>
                     <p>Pronouns: he/him</p>
                     <p>Email: wzhang26@uw.edu</p>
-                    <p>Roles: Front/Back end Dev</p>
+                    <p>Roles: Full-Stack Dev</p>
                 </div>
             </div>
 

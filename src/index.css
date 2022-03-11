@@ -8,6 +8,7 @@
 
 html {
   height: 100%;
+  background-color: #000F96;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 0px 30px 30px 30px;
+  background-color: white;
   color: black;
 }
 
@@ -86,7 +88,6 @@ body {
 .spacer {
   flex: 1;
   flex-grow: 1;
-  min-height: 60px;
 }
 
 .nav-brand-name {
@@ -156,7 +157,7 @@ main {
   align-items: center;
   background: white;
   width: 500px;
-  height: 100%;
+  height: auto;
 }
 
 .chatbox {
@@ -342,6 +343,7 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: white;
 }
 
 .pet-card {

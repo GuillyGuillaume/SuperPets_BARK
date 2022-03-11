@@ -5,9 +5,9 @@ import { NavBar } from './Navigation';
 
 export function EsaScreen() {
 return (
-    <section class="content-box">
-            <h1 class="page-title">ESA Survey</h1>
-            <div class="ESA-detail">
+    <section className="content-box">
+            <h1 className="page-title">ESA Survey</h1>
+            <div className="ESA-detail">
                 <h1>Are you in need of an Emotional Support Animal?</h1>
                 <p>
                     Emotional Support Animal support animals provide companionship, 
