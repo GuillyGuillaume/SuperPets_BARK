@@ -1,9 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-
+import { getDatabase, ref, onValue } from 'firebase/database'
 import { NavBar } from './Navigation';
 
 export function EsaScreen() {
+    
+    const [currentFriends, setCurrentFriends] = useState([]);
+
+    const db = getDatabase(); //get database address from firebase servers
+    useEffect(() => {
+        const testArrRef = ref(db, 'Tasks') //  dir/key for reference
+        //addEventListener for database value change
+        const offFunction = onValue(testArrRef, (snapshot) => {
+        const allEvents = snapshot.val(); //extract the value from snapshot
+        const eventKeyArray = Object.keys(allEvents);
+        let eventsArray = eventKeyArray.map((eventKey) => {
+            const theEvent = allEvents[eventKey];
+            return theEvent;
+        })
+        setCurrentFriends(eventsArray[0]);
+        });
+        return () => {
+        offFunction();
+        }
+    }, []);
+    console.log(currentFriends)
+
 return (
     <section className="content-box">
             <h1 className="page-title">ESA Survey</h1>
