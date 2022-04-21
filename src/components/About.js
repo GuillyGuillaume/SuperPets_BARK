@@ -4,18 +4,18 @@ import { NavBar } from './Navigation';
 function AboutUsDetails() {
     return (
         <div className="aboutUs-text">
-            <h1>Who We Are</h1>
+            <h2>Who We Are</h2>
             <ul>
-                <h3><strong>Overview</strong></h3>
+                <h3>Overview</h3>
                 <p className="details">
                     Prima justo dolores te eam. Vim et paulo consequuntur. Usu an vero soleat principes, et iriure graecis has. Senserit consectetuer in vix, dicat audire qualisque ad duo. Facilis offendit instructior et has, atqui tollit noluisse at mei. Quidam vivendum incorrupte ut nec, audire euismod in nec, brute consetetur nam te.
                 </p>
-                <h3><strong>Problem Space</strong></h3>
+                <h3>Problem Space</h3>
                 <p className="details">
                     Prima justo dolores te eam. Vim et paulo consequuntur. Usu an vero soleat principes, et iriure graecis has. Senserit consectetuer in vix, dicat audire qualisque ad duo. Facilis offendit instructior et has, atqui tollit noluisse at mei. Quidam vivendum incorrupte ut nec, audire euismod in nec, brute consetetur nam te.
                 </p>
             </ul>
-            <h1> BARK!'s Solution</h1>
+            <h2> BARK!'s Solution</h2>
             <ul>
                 <p className="details">
                     Prima justo dolores te eam. Vim et paulo consequuntur. Usu an vero soleat principes, et iriure graecis has. 
@@ -23,7 +23,7 @@ function AboutUsDetails() {
                     atqui tollit noluisse at mei. Quidam vivendum incorrupte ut nec, audire euismod in nec, brute consetetur nam te.
                 </p>
             </ul>
-            <h1>Meet The Team</h1>
+            <h2>Meet The Team</h2>
         </div>
     )
 }
@@ -38,33 +38,25 @@ export function AboutScreen() {
                     <img src="img/TaylorPFP.jpg" alt="profile pic" />
                     <p></p>
                     <p><strong>Taylor Jackson</strong></p>
-                    <p>Pronouns: she/her</p>
-                    <p>Email: tyj10@uw.edu</p>
-                    <p>Roles: Project Manager</p>
+                    <p>Project Manager</p>
                 </div>
                 <div className="team-card">
                     <img src="img/WenyiPFP.jpeg" alt="profile pic" />
                     <p></p>
                     <p><strong>Wenyi Sun</strong></p>
-                    <p>Pronouns: she/her</p>
-                    <p>Email: wenyis@uw.edu</p>
-                    <p>Roles: UI/UX Designer</p>
+                    <p>UI/UX Designer</p>
                 </div>
                 <div className="team-card">
                     <img src="img/JennaPFP.jpeg" alt="profile pic" />
                     <p></p>
                     <p><strong>Jenna Wapstra</strong></p>
-                    <p>Pronouns: she/her</p>
-                    <p>Email: jwapstra@uw.edu</p>
-                    <p>Roles: Research</p>
+                    <p>Researcher</p>
                 </div>
                 <div className="team-card">
                     <img src="img/WilliamPFP.jpg" alt="profile pic" />
                     <p></p>
                     <p><strong>William Zhang</strong></p>
-                    <p>Pronouns: he/him</p>
-                    <p>Email: wzhang26@uw.edu</p>
-                    <p>Roles: Full-Stack Dev</p>
+                    <p>Full-Stack Dev</p>
                 </div>
             </div>
 
