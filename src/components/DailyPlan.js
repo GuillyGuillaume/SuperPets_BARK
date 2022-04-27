@@ -84,6 +84,5 @@ export function DailyScreen() {
 
         <NavBar />
         </section>
-
     );
 }

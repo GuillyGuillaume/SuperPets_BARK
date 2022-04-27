@@ -5,6 +5,7 @@ import { DailyScreen } from './DailyPlan';
 import { WeeklyScreen } from './WeeklyPlan';
 import { PetScreen } from './Pets';
 import { EsaScreen } from './Esa';
+import { SigninScreen } from './Signin'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <main>
         <Routes>
           <Route exact path="/" element={<HomeScreen />}></Route>
+          <Route path="/signin" element={<SigninScreen />}></Route>
           <Route path="/about" element={<AboutScreen />}></Route>
           <Route path="/dailyPlan" element={<DailyScreen />}></Route>
           <Route path="/weeklyPlan" element={<WeeklyScreen />}></Route>
