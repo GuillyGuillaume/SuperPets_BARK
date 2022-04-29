@@ -9,7 +9,7 @@ export function EsaScreen() {
 
     const db = getDatabase(); //get database address from firebase servers
     useEffect(() => {
-        const testArrRef = ref(db, 'Tasks') //  dir/key for reference
+        const testArrRef = ref(db, 'users/7qELoGdorpZrhc4OybVXzwO8mc93') //  dir/key for reference
         //addEventListener for database value change
         const offFunction = onValue(testArrRef, (snapshot) => {
         const allEvents = snapshot.val(); //extract the value from snapshot
@@ -18,7 +18,7 @@ export function EsaScreen() {
             const theEvent = allEvents[eventKey];
             return theEvent;
         })
-        setCurrentFriends(eventsArray[0]);
+        setCurrentFriends(eventsArray);
         });
         return () => {
         offFunction();

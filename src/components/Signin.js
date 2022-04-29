@@ -42,7 +42,7 @@ export function SigninScreen() {
             loginEmail,
             loginPassword
         );
-        console.log(user);
+        console.log(user.user.uid);
         } catch (error) {
         console.log(error.message);
         }
