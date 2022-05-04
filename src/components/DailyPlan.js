@@ -78,7 +78,7 @@ export function DailyScreen() {
         <div className="chatbox">
         <p><a onClick={handleClick}>Click here to see your weekly schedule!</a></p>
         </div>
-        <img src="img/tempdog.gif" width="300"/>
+        <img src={'img/tempdog.gif'} width='300'/>
 
         <div className="spacer"></div>
 

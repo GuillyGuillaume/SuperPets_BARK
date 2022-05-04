@@ -11,6 +11,7 @@ export function NavBar() {
                 <li className="nav-item" role="presentation"><NavLink to="/pets" className="nav-link text-white">Pets</NavLink></li>
                 <li className="nav-item" role="presentation"><NavLink to="/dailyPlan" className="nav-link text-white">Plans</NavLink></li>
                 <li className="nav-item" role="presentation"><NavLink to="/esa" className="nav-link text-white">ESA</NavLink></li>
+                <li className="nav-item" role="presentation"><NavLink to="/signin" className="nav-link text-white">Logout</NavLink></li>
             </ul>
         </nav>
     </header>

@@ -8,7 +8,6 @@ import {
     signOut,
 } from "firebase/auth";
 
-
 export function SigninScreen() {
     const auth = getAuth();
     const [registerEmail, setRegisterEmail] = useState("");
@@ -48,60 +47,58 @@ export function SigninScreen() {
         }
     };
 
-    const logout = async () => {
-        await signOut(auth);
-    };
-
     return (
         <section className="content-box">
-            <p class="login-title"><strong>BARK!</strong></p>
-            <div>
-                <p>Your Personal Virtual Support Companion</p>
-                <button class="primary-btn" type="submit"><strong>Log In</strong></button>                
-                <button class="second-btn" type="submit"><strong>Sign Up</strong></button>
-            </div>
+            <p className="login-title"><strong>BARK!</strong></p>
 
+            <div className='spacer'></div>
+            
+            <p>Your Personal Virtual Support Companion</p>
             <div>
-                <h3> Register User </h3>
                 <input
                 placeholder="Email..."
                 onChange={(event) => {
                     setRegisterEmail(event.target.value);
-                }}
-                />
+                }}/>
                 <input
                 placeholder="Password..."
                 onChange={(event) => {
                     setRegisterPassword(event.target.value);
-                }}
-                />
-
-                <button onClick={register}> Create User</button>
+                }}/>
+                <button className="second-btn" onClick={register}><strong>Sign Up</strong></button>
             </div>
 
+            <div className='spacer'></div>
+
             <div>
-                <h3> Login </h3>
                 <input
                 placeholder="Email..."
                 onChange={(event) => {
                     setLoginEmail(event.target.value);
-                }}
-                />
+                }}/>
                 <input
                 placeholder="Password..."
                 onChange={(event) => {
                     setLoginPassword(event.target.value);
-                }}
-                />
-
-                <button onClick={login}> Login</button>
+                }}/>
+                <button className="second-btn" onClick={login}><strong>Log In</strong></button>
             </div>
 
-            <h4> User Logged In: </h4>
-            {user?.email}
-
-            <button onClick={logout}> Sign Out </button>
+            <div className='spacer'></div>
 
         </section>
     );
   }
+
+/*
+
+    const logout = async () => {
+        await signOut(auth);
+    };
+
+
+
+{user?.email}
+<button className="primary-btn" onClick={logout}><strong>Log Out</strong></button>
+<div className='spacer'></div>
+*/

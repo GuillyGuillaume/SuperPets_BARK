@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import Slider from '@mui/base/SliderUnstyled';
 
 
 import { NavBar } from './Navigation';
@@ -34,7 +33,7 @@ return (
         <p id="toggle" className="hide">
             <strong>WOOF WOOF!</strong>
         </p>
-        <img src="img/tempdog.gif" width="300" alt="virtual pet"/>
+        <img src={'img/tempdog.gif'} width='300' alt="virtual pet"/>
 
         <div className="spacer"></div>
         <NavBar />

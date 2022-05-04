@@ -34,7 +34,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 0px 30px 30px 30px;
-  background-color: white;
   color: black;
 }
 
@@ -52,7 +51,6 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: white;
   align-items: center;
   border-radius: 10px;
   margin: 2rem;
@@ -150,14 +148,15 @@ main {
   flex-direction: column;
   color: #000F96;
   align-items: center;
-  background: white;
+  background-image: linear-gradient(purple,white);
   width: 100%;
 }
 
 .chatbox {
-  width: 80%;
+  width: 40%;
   border: 4px solid black;
   border-radius: 10px;
+  background-color: white;
   color: black;
 }
 
@@ -236,7 +235,6 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: white;
 }
 
 .pet-card {
@@ -286,6 +284,7 @@ iframe {
   display: block;
   border-radius: 10px;
   font-size: 24px;
+  border: 3px solid #000F96;
 }
 
 .second-btn {
@@ -298,7 +297,7 @@ iframe {
   display: block;
   border-radius: 10px;
   font-size: 24px;
-  border: 3px solid white;
+  border: 3px solid #000F96;
 }
 
 .primary-btn:hover, .primary-btn:focus, .second-btn:hover, .second-btn:focus {
