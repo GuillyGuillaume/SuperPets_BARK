@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
 import { NavBar } from './Navigation';
 import { getDatabase, ref, set as fbset, onValue } from 'firebase/database';
-import { Button, Card, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { getAuth } from "firebase/auth";
 
 
 function Todo({ todo, index, removeTodo }) {
@@ -11,7 +11,7 @@ function Todo({ todo, index, removeTodo }) {
         <div className="task-card">
             <button className="btn btn-sm btn-warning" onClick={() => removeTodo(index)}>Done</button>
             <p>
-                {todo.text}
+                {todo}
             </p>
         </div>
     );
@@ -42,23 +42,37 @@ function FormTodo({ addTodo }) {
 }
 
 export function DailyScreen() {
+    const auth = getAuth();
     const navigate = useNavigate();
-    const [todos, setTodos] = React.useState([
-    {text: "Take vitamins"},        
-    {text: "Take medications"},
-    {text: "Feed Mushu"},
-    {text: "Drink water bottle twice"}  
-    ]);
+    const [todos, setTodos] = React.useState([]);
+    const todayDate = new Date();
+    const currDate = todayDate.getMonth() + "-" + todayDate.getDay()
+
+    const db = getDatabase();
+    useEffect(() => {
+        const dailyArrRef = ref(db, "users/"+auth.currentUser.uid+"/daily") //  dir/key for reference
+        //addEventListener for database value change
+        const offFunction = onValue(dailyArrRef, (snapshot) => {
+            let newValue = snapshot.val(); //extract the value from snapshot
+            setTodos(newValue);
+            console.log(newValue);
+        });
+        return () => {
+            offFunction();
+        }
+    }, []);
+    console.log(todos);
 
     const addTodo = text => {
-    const newTodos = [...todos, { text }];
-    setTodos(newTodos);
+        const newTodos = [...todos, text];
+        const index = newTodos.length-1;
+        const taskRef = ref(db, "users/"+auth.currentUser.uid+"/daily/"+index+"/task")
+        fbset(taskRef, text);
     };
 
     const removeTodo = index => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+        const timeDoneRef = ref(db, "users/"+auth.currentUser.uid+"/daily/"+index+"/timeDone")
+        fbset(timeDoneRef, currDate);
     };
 
     function handleClick() {
@@ -70,9 +84,12 @@ export function DailyScreen() {
         <h1 className="page-title">Daily Reminders</h1>
         <div className="spacer"></div>
         <div className="daily-tasks">
-            {todos.map((todo, index) => (
-                <Todo key={index} index={index} todo={todo} removeTodo={removeTodo} />
-            ))}
+            {todos.map((todo, index) => {
+                if(todo.timeDone != currDate) {
+                    return(<Todo key={index} index={index} todo={todo.task} removeTodo={removeTodo} />)
+                }
+            })}
+
         </div>
         <FormTodo addTodo={addTodo} />
         <div className="chatbox">

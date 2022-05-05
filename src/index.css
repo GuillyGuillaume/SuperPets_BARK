@@ -70,7 +70,7 @@ body {
   position: fixed;
   bottom: 0;
   display: flex;
-  background-color: black;
+  background-color: #4382CD;
   align-items: center;
   font-size: 16px;
   justify-content: flex-end;
@@ -107,7 +107,7 @@ body {
 
 .page-title {
   padding: 1rem;
-  background-color: black;
+  background-color: #4382CD;
   width: 100%;
   height: 60px;
   color: white;
@@ -148,7 +148,7 @@ main {
   flex-direction: column;
   color: #000F96;
   align-items: center;
-  background-image: linear-gradient(purple,white);
+  background-color: white;
   width: 100%;
 }
 

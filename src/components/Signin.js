@@ -7,11 +7,14 @@ import {
     onAuthStateChanged,
     signOut,
 } from "firebase/auth";
+import { getDatabase, ref, set as fbset} from 'firebase/database';
+
 
 export function SigninScreen() {
     const auth = getAuth();
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
+    const [registerName, setRegisterName] = useState("");
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
 
@@ -32,6 +35,9 @@ export function SigninScreen() {
         } catch (error) {
         console.log(error.message);
         }
+        const db = getDatabase();
+        const nameRef = ref(db, "users/"+auth.currentUser.uid+"/name")
+        fbset(nameRef, registerName);
     };
 
     const login = async () => {
@@ -64,6 +70,11 @@ export function SigninScreen() {
                 placeholder="Password..."
                 onChange={(event) => {
                     setRegisterPassword(event.target.value);
+                }}/>
+                <input
+                placeholder="Your Name..."
+                onChange={(event) => {
+                    setRegisterName(event.target.value);
                 }}/>
                 <button className="second-btn" onClick={register}><strong>Sign Up</strong></button>
             </div>
