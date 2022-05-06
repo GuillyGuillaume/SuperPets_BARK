@@ -37,7 +37,11 @@ export function SigninScreen() {
         }
         const db = getDatabase();
         const nameRef = ref(db, "users/"+auth.currentUser.uid+"/name")
+        const dailyRef = ref(db, "users/"+auth.currentUser.uid+"/daily")
         fbset(nameRef, registerName);
+        fbset(dailyRef, [{
+            "task": "Drink Water!"
+          }]);
     };
 
     const login = async () => {
@@ -51,6 +55,10 @@ export function SigninScreen() {
         } catch (error) {
         console.log(error.message);
         }
+    };
+
+    const logout = async () => {
+        await signOut(auth);
     };
 
     return (
@@ -95,6 +103,10 @@ export function SigninScreen() {
                 <button className="second-btn" onClick={login}><strong>Log In</strong></button>
             </div>
 
+            <div className='spacer'></div>
+
+            {user?.email}
+            <button className="primary-btn" onClick={logout}><strong>Log Out</strong></button>
             <div className='spacer'></div>
 
         </section>
