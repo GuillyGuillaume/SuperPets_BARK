@@ -63,10 +63,7 @@ export function EsaScreen() {
                     <td>If your score is less than 5</td>
                     <td>You have minial depress, and it's better for you to talk with people you trusted, do some excrise</td>
                 </tr>
-                        <tr>
-                            <td>If your score is less than 5</td>
-                            <td>You have minial depress, and it's better for you to talk with people you trusted, do some excrise</td>
-                        </tr>
+                        
                         <tr>
                             <td>If your score is between 5 and 14</td>
                             <td>You are experiening mild and moderate depression, we recommed you to have a ESA if your problem is continuing </td>

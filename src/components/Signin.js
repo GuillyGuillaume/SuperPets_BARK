@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import { Navigate} from "react-router-dom";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -8,6 +9,7 @@ import {
     signOut,
 } from "firebase/auth";
 import { getDatabase, ref, set as fbset} from 'firebase/database';
+import {HomeScreen} from "./Home"
 
 
 export function SigninScreen() {
@@ -51,6 +53,8 @@ export function SigninScreen() {
             loginEmail,
             loginPassword
         );
+        // const location = HomeScreen();
+        Navigate(<HomeScreen />);
         console.log(user.user.uid);
         } catch (error) {
         console.log(error.message);
@@ -75,6 +79,9 @@ export function SigninScreen() {
                     setRegisterEmail(event.target.value);
                 }}/>
                 <input
+                    /* image 18 */
+
+                type="password"
                 placeholder="Password..."
                 onChange={(event) => {
                     setRegisterPassword(event.target.value);
@@ -96,6 +103,7 @@ export function SigninScreen() {
                     setLoginEmail(event.target.value);
                 }}/>
                 <input
+                type = "password"
                 placeholder="Password..."
                 onChange={(event) => {
                     setLoginPassword(event.target.value);

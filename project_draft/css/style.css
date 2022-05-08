@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+* {
+  position: absolute;
+  width: 96.57px;
+  height: 103.49px;
+  left: 111.99px;
+  top: 64px;
+  background: url("../../public/img/Paw-print.png");
+  transform: matrix(-0.26, 0.97, 0.97, 0.26, 0, 0);
+}
+
 html {
   height: 100%;
 }
@@ -13,6 +23,16 @@ body {
   margin: 0;
   height: 100%;
 }
+.content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000F96;
+  align-items: center;
+  background: white;
+  width: 500px;
+  height: 100%;
+}
 
 /*about us css*/
 
@@ -22,7 +42,7 @@ body {
   color: black;
 }
 
-.aboutUs-cards{
+.aboutUs-cards {
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -112,7 +132,7 @@ body {
   flex-flow: row;
 }
 
-.slidecontainer > div {
+.slidecontainer>div {
   flex-grow: 1;
 }
 
@@ -146,16 +166,7 @@ main {
   height: auto;
 }
 
-.content-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #000F96;
-  align-items: center;
-  background: white;
-  width: 500px;
-  height: 100%;
-}
+
 
 .chatbox {
   width: 80%;
@@ -164,14 +175,14 @@ main {
   color: black;
 }
 
-.chatbox > div {
+.chatbox>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 5%;
 }
 
-.chatbox > p {
+.chatbox>p {
   padding: 5% 5% 0px 5%;
 }
 
@@ -193,18 +204,18 @@ main {
   border-radius: 10px;
 }
 
-.task-card > p {
+.task-card>p {
   margin: 10px;
   flex-grow: 1;
 
 }
 
-.task-card > button {
+.task-card>button {
   margin: 10px;
 }
 
 
- /* log in css
+/* log in css
  
 .login-box {
   display: flex;
@@ -324,7 +335,7 @@ main {
   margin: 20px;
 }
 
-.pet-card > img {
+.pet-card>img {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -334,15 +345,25 @@ main {
   height: 180px;
 }
 
-/* css for ESS page*/
+/* css for ESA page*/
 iframe {
   width: 450px;
-  height: 100%; 
+  height: 100%;
 }
 
 .ESA-detail {
   justify-content: center;
   padding: 30px;
+}
+
+.content-box {
+  position: absolute;
+  width: 96.57px;
+  height: 103.49px;
+  left: 111.99px;
+  top: 64px;
+  background: url("../../public/img/Paw-print.png");
+  transform: matrix(-0.26, 0.97, 0.97, 0.26, 0, 0);
 }
 
 /*@media (min-width: 640px) {
