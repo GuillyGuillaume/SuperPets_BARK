@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
 import { getDatabase, ref, set as fbset, onValue } from 'firebase/database';
 import { getAuth } from "firebase/auth";
-import { NavBar } from './Navigation';
 
 export function HomeScreen() {
     const [response, setResponse] =useState("");
@@ -92,9 +91,9 @@ return (
                 <button className="mood-button" onClick={handleClick} value = "sad">😔</button>
                 <button className="mood-button" onClick={handleClick} value = "normal">😐</button>
                 <button className="mood-button" onClick={handleClick} value = "notbad">🙂</button>
-                <button className="mood-button" onClick={handleClick} value= "happy">😀</button>
+                <button className="mood-button" onClick={handleClick} value = "happy">😀</button>
             </span>
-            </div>
+        </div>
         <h2>
             <strong>{response}</strong>
         </h2>

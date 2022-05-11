@@ -17,11 +17,13 @@ body {
   font-family: "Overpass", sans-serif;
   margin: 0;
   height: 100%;
-  background-image: url(img/PawPatternBig.png);
-  background-repeat:round;
 }
 .content-box{
   position: absolute;
+  min-height: 100%;
+  background-image: url(img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /*about us css*/
 
@@ -157,7 +159,6 @@ footer {
 main {
   display: flex;
   justify-content: center;
-  /* background: #000F96; */
   height: 100%;
 }
 
@@ -166,7 +167,6 @@ main {
   flex-direction: column;
   color: #000F96;
   align-items: center;
-  /* background-color: white; */
   width: 100%;
 }
 
@@ -250,7 +250,6 @@ main {
 
 .pets {
   display: flex;
-  flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
