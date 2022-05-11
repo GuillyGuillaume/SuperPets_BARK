@@ -7,21 +7,26 @@ import { NavBar } from './Navigation';
 
 export function PetScreen() {
     const auth = getAuth();
-
+    const [msg, setMsg] = useState("");
+   
     const dogClick = async () => {
         const db = getDatabase();
         const petRef = ref(db, "users/"+auth.currentUser.uid+"/pet")
         fbset(petRef, "dog.png");
+        setMsg("Adopt Buddy successufully!")
+        
     };
     const catClick = async () => {
         const db = getDatabase();
         const petRef = ref(db, "users/"+auth.currentUser.uid+"/pet")
         fbset(petRef, "cat.png");
+        setMsg("Adopt Luna successufully!")
     };
     const hamClick = async () => {
         const db = getDatabase();
         const petRef = ref(db, "users/"+auth.currentUser.uid+"/pet")
         fbset(petRef, "ham.png");
+        setMsg("Adopt Cheese Curd successufully!")
     };
     
 return (
@@ -46,7 +51,9 @@ return (
                 <p>Name: CHEESE CURD</p>
                 <button className="btn btn-warning" onClick={hamClick}>Adopt!</button>
             </div>
+            
         </div>
+        <p>{msg}</p>
         <div className="spacer"></div>
     </section>
     );

@@ -46,9 +46,8 @@ export function EsaScreen() {
                     bothered by any of the following problems?
                 </p>
             </div>
-            {/* <iframe className="survey" src="https://docs.google.com/forms/d/e/1FAIpQLSe_jhw-GfKX2oK2QIP_kht1RcJ9iZpHzA9XydO6SKPNs1DyiQ/viewform?embedded=true">Loading…</iframe> */}
             <ESAQ />
-             {/* <div className="spacer"></div>  */}
+            
             <div className = "AnswerTable">
             <table>
                 <thead>
@@ -74,6 +73,7 @@ export function EsaScreen() {
                 </tbody>
             </table>
             </div>
+            <div className="spacer"></div> 
         </section>
     );
 }

@@ -48,6 +48,7 @@ export function DailyScreen() {
     const todayDate = new Date();
     const currDate = todayDate.getMonth() + "-" + todayDate.getDay();
     const [currPet, setPet] = React.useState("");
+    const [response, setResponse] = useState("");
 
     const db = getDatabase();
     useEffect(() => {
@@ -76,6 +77,13 @@ export function DailyScreen() {
         }
     }, []);
 
+   
+    const randomResponse = () =>{
+        const sentences = ["Well Done", "Good Job!", "I'm impressed", "Superb!", "Keep it Up! "]  
+        let res = sentences[Math.floor((sentences.length-1) * Math.random())]
+        setResponse(res)
+        console.log(response)
+    }
 
     const addTodo = text => {
         const newTodos = [...todos, text];
@@ -87,6 +95,8 @@ export function DailyScreen() {
     const removeTodo = index => {
         const timeDoneRef = ref(db, "users/"+auth.currentUser.uid+"/daily/"+index+"/timeDone")
         fbset(timeDoneRef, currDate);
+        randomResponse();
+        
     };
 
     function handleClick() {
@@ -106,7 +116,9 @@ export function DailyScreen() {
 
         </div>
         <FormTodo addTodo={addTodo} />
+         <p>{response}</p>
         <img src={'img/' + currPet} width='300'/>
+        
         <div className="spacer"></div>
         </section>
     );
