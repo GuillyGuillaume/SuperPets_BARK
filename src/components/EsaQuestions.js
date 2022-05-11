@@ -24,7 +24,7 @@ export function ESAQ() {
             <table>
                 <thead>
                     <tr>
-                        <th> </th>
+                        <th>Quesions</th>
                         <th>Not at all</th>
                         <th>Several days</th>
                         <th>More than half the days </th>

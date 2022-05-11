@@ -90,7 +90,7 @@ return (
             <span className="mood-box">
                 <button className="mood-button" onClick={handleClick} value = "frustrated">😒</button>
                 <button className="mood-button" onClick={handleClick} value = "sad">😔</button>
-                <button className="mood-button" onClick={handleClick} value = " normal">😐</button>
+                <button className="mood-button" onClick={handleClick} value = "normal">😐</button>
                 <button className="mood-button" onClick={handleClick} value = "notbad">🙂</button>
                 <button className="mood-button" onClick={handleClick} value= "happy">😀</button>
             </span>

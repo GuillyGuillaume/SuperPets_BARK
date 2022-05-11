@@ -47,7 +47,6 @@ export function EsaScreen() {
                 </p>
             </div>
             <ESAQ />
-            
             <div className = "AnswerTable">
             <table>
                 <thead>
@@ -72,8 +71,9 @@ export function EsaScreen() {
                         </tr>
                 </tbody>
             </table>
+                <div className="spacer"></div> 
             </div>
-            <div className="spacer"></div> 
+            
         </section>
     );
 }
