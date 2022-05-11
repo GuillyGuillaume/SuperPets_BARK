@@ -7,6 +7,7 @@ import { PetScreen } from './Pets';
 import { EsaScreen } from './Esa';
 import { SigninScreen } from './Signin'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { NavBar } from './Navigation';
 
 import { useState, useEffect } from "react";
 import {
@@ -49,6 +50,7 @@ function App() {
             <Route path="/esa" element={<EsaScreen />}></Route>
             <Route path="*" element={<HomeScreen />} />
           </Routes>
+          <NavBar />
         </main>
       </BrowserRouter>
     );

@@ -43,8 +43,6 @@ export function WeeklyScreen() {
             <img src="img/tempdog.gif" width="300"/>
 
             <div className="spacer"></div>
-
-            <NavBar/>
         </section>
     );
 }

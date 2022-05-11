@@ -10,15 +10,45 @@ export function HomeScreen() {
     }
     const todayDate = new Date();
     const [name, setName] = React.useState("");
+    const [currPet, setPet] = React.useState("");
+    
+    let currTime = "";
+    
     const auth = getAuth();
     const db = getDatabase();
+
+    if(todayDate.getMinutes() < 10){
+        if(todayDate.getHours() > 12){
+            currTime = todayDate.getHours()-12 + ":0" + todayDate.getMinutes() + " PM";
+        } else {
+            currTime = todayDate.getHours() + ":0" + todayDate.getMinutes() + " AM";
+        }
+    } else {
+        if(todayDate.getHours() > 12){
+            currTime = todayDate.getHours()-12 + ":" + todayDate.getMinutes() + " PM";
+        } else {
+            currTime = todayDate.getHours() + ":" + todayDate.getMinutes() + " AM";
+        }
+    }
+
     useEffect(() => {
         const nameRef = ref(db, "users/"+auth.currentUser.uid+"/name") //  dir/key for reference
         //addEventListener for database value change
         const offFunction = onValue(nameRef, (snapshot) => {
             let userName = snapshot.val(); //extract the value from snapshot
-            console.log(userName);
             setName(userName);
+        });
+        return () => {
+            offFunction();
+        }
+    }, []);
+
+    useEffect(() => {
+        const petRef = ref(db, "users/"+auth.currentUser.uid+"/pet") //  dir/key for reference
+        //addEventListener for database value change
+        const offFunction = onValue(petRef, (snapshot) => {
+            let newValue = snapshot.val(); //extract the value from snapshot
+            setPet(newValue);
         });
         return () => {
             offFunction();
@@ -34,28 +64,26 @@ return (
         <div className="spacer"></div>
 
         <div className="chatbox">
+            <h1 className="time">
+                <strong>{currTime}</strong>
+            </h1>
             <p>
-                Hi, {name}! It’s {todayDate.getHours() + ":" + todayDate.getMinutes()}, and you are halfway through your classes for today. How are you feeling?
+                Hi, {name}! How are you feeling right now?
             </p>
-            <div>
-            <input type="range" min="0" max="8"/>
-                <div className="slidecontainer">
-                    <div>😒</div>
-                    <div>😔</div>
-                    <div>😐</div>
-                    <div>🙂</div>
-                    <span>😀</span>
-                </div>
-                <button className="btn btn-sm btn-warning" onClick={handleClick}>Check In</button>
+            <span className="mood-box">
+                <button className="mood-button" onClick={handleClick}>😒</button>
+                <button className="mood-button" onClick={handleClick}>😔</button>
+                <button className="mood-button" onClick={handleClick}>😐</button>
+                <button className="mood-button" onClick={handleClick}>🙂</button>
+                <button className="mood-button" onClick={handleClick}>😀</button>
+            </span>
             </div>
-        </div>
         <p id="toggle" className="hide">
             <strong>WOOF WOOF!</strong>
         </p>
-        <img src={'img/tempdog.gif'} width='300' alt="virtual pet"/>
+        <img src={'img/' + currPet} width='300' alt="virtual pet"/>
 
         <div className="spacer"></div>
-        <NavBar />
     </section>
     );
 }

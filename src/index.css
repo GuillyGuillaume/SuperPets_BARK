@@ -8,7 +8,7 @@
 
 html {
   height: 100%;
-  background-color: #000F96;
+  background-color: white;
 }
 
 body {
@@ -85,6 +85,7 @@ body {
 .spacer {
   flex: 1;
   flex-grow: 1;
+  min-height: 60px;
 }
 
 .nav-brand-name {
@@ -114,15 +115,28 @@ body {
   font-size: 30px;
 }
 
-.slidecontainer {
+.mood-box {
   display: flex;
-  width: 100%;
   flex-direction: row;
-  flex-flow: row;
 }
 
-.slidecontainer > div {
+.mood-button {
   flex-grow: 1;
+  font-size: 1.5rem;
+  border: 0rem;
+  padding: 0.7rem 0rem 0rem 0rem;
+  background-color: inherit;
+  border-radius: 10px;
+}
+
+.mood-button:hover, .mood-button:focus {
+  cursor: pointer;
+  background-color: #4382CD;
+}
+
+.time {
+  text-align: center;
+  padding: 1rem 0rem 0rem 0rem;
 }
 
 footer {
@@ -153,7 +167,7 @@ main {
 }
 
 .chatbox {
-  width: 40%;
+  width: 80%;
   border: 4px solid black;
   border-radius: 10px;
   background-color: white;
@@ -241,7 +255,6 @@ main {
   background-color: #4382CD;
   color: black;
   border-radius: 10px;
-  width: 200px;
   padding: 20px;
   margin: 20px;
 }
@@ -250,10 +263,10 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 10px;
-  width: 160px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
 }
 
 /* css for ESS page*/
@@ -304,4 +317,44 @@ iframe {
   cursor: pointer;
   box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.6);
   transform: translateY(-0.1em);
+}
+
+
+@media (min-width: 768px) {
+  .chatbox {
+    width: 60%;
+  }
+  .pet-card > img {
+    width: 200px;
+    height: 200px;
+  }
+  .chatbox > p {
+    font-size: 1rem;
+  }
+  .mood-button {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .pet-card > img {
+    width: 250px;
+    height: 250px;
+  }
+  .chatbox > p {
+    font-size: 1.5rem;
+  }
+  .mood-button {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .chatbox {
+    width: 40%;
+  }
+  .pet-card > img {
+    width: 300px;
+    height: 300px;
+  }
 }

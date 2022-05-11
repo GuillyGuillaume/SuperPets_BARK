@@ -40,10 +40,12 @@ export function SigninScreen() {
         const db = getDatabase();
         const nameRef = ref(db, "users/"+auth.currentUser.uid+"/name")
         const dailyRef = ref(db, "users/"+auth.currentUser.uid+"/daily")
+        const petRef = ref(db, "users/"+auth.currentUser.uid+"/pet")
         fbset(nameRef, registerName);
         fbset(dailyRef, [{
             "task": "Drink Water!"
           }]);
+        fbset(petRef, "ham.png");
     };
 
     const login = async () => {

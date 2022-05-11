@@ -46,7 +46,8 @@ export function DailyScreen() {
     const navigate = useNavigate();
     const [todos, setTodos] = React.useState([]);
     const todayDate = new Date();
-    const currDate = todayDate.getMonth() + "-" + todayDate.getDay()
+    const currDate = todayDate.getMonth() + "-" + todayDate.getDay();
+    const [currPet, setPet] = React.useState("");
 
     const db = getDatabase();
     useEffect(() => {
@@ -61,7 +62,20 @@ export function DailyScreen() {
             offFunction();
         }
     }, []);
-    console.log(todos);
+
+    useEffect(() => {
+        const petRef = ref(db, "users/"+auth.currentUser.uid+"/pet") //  dir/key for reference
+        //addEventListener for database value change
+        const offFunction = onValue(petRef, (snapshot) => {
+            let newValue = snapshot.val(); //extract the value from snapshot
+            setPet(newValue);
+            console.log(newValue);
+        });
+        return () => {
+            offFunction();
+        }
+    }, []);
+
 
     const addTodo = text => {
         const newTodos = [...todos, text];
@@ -92,14 +106,12 @@ export function DailyScreen() {
 
         </div>
         <FormTodo addTodo={addTodo} />
-        <div className="chatbox">
-        <p><a onClick={handleClick}>Click here to see your weekly schedule!</a></p>
-        </div>
-        <img src={'img/tempdog.gif'} width='300'/>
-
+        <img src={'img/' + currPet} width='300'/>
         <div className="spacer"></div>
-
-        <NavBar />
         </section>
     );
 }
+
+//<div className="chatbox">
+//<p><a onClick={handleClick}>Click here to see your weekly schedule!</a></p>
+//</div>

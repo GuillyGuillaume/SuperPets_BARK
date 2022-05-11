@@ -48,7 +48,6 @@ export function EsaScreen() {
             </div>
             {/* <iframe className="survey" src="https://docs.google.com/forms/d/e/1FAIpQLSe_jhw-GfKX2oK2QIP_kht1RcJ9iZpHzA9XydO6SKPNs1DyiQ/viewform?embedded=true">Loading…</iframe> */}
             <ESAQ />
-            <NavBar />
              {/* <div className="spacer"></div>  */}
             <div className = "AnswerTable">
             <table>
