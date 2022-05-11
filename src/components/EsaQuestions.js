@@ -4,7 +4,7 @@ import { getDatabase, ref, onValue } from 'firebase/database'
 
 
 export function ESAQ() {
-   const [score, setScore] = useState("")
+//    const [score, setScore] = useState("")
     var arr = [];
     const updateArr = function (event) {
         arr.push(event.target.value*1)
@@ -15,10 +15,10 @@ export function ESAQ() {
         let sum = arr.reduce(function (previousValue, currentValue) {
             return previousValue + currentValue
         }, 0)
-        setScore(sum)
-        
+        // setScore(sum);
+        document.getElementById("esaMsg").innerHTML = "Your total score is " + sum;    
     }
-
+    
     return (
         <div className="ESATable">
             <table>
@@ -104,7 +104,7 @@ hurting yourself</td>
                 </tbody>
             </table>
             <button onClick={handleSubmit}>Submit</button>
-            <p>Yout total Score is {score}</p>
+            <p id="esaMsg"></p>
             <div className="spacer"></div> 
         </div>
     )
