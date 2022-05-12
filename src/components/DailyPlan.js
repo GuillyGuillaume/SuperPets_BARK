@@ -79,10 +79,9 @@ export function DailyScreen() {
 
    
     const randomResponse = () =>{
-        const sentences = ["Well Done", "Good Job!", "I'm impressed", "Superb!", "Keep it Up! "]  
+        const sentences = ["Well Done!", "Good Job!", "I'm impressed!", "Superb!", "Keep it Up!"]  
         let res = sentences[Math.floor((sentences.length-1) * Math.random())]
         setResponse(res)
-        console.log(response)
     }
 
     const addTodo = text => {
@@ -96,7 +95,6 @@ export function DailyScreen() {
         const timeDoneRef = ref(db, "users/"+auth.currentUser.uid+"/daily/"+index+"/timeDone")
         fbset(timeDoneRef, currDate);
         randomResponse();
-        
     };
 
     function handleClick() {
@@ -116,7 +114,13 @@ export function DailyScreen() {
 
         </div>
         <FormTodo addTodo={addTodo} />
-         <p>{response}</p>
+        <div className="chatbox">
+            <p>
+                These are your tasks for today!
+                <p>{response}</p>
+            </p>
+        </div>
+        
         <img src={'img/' + currPet} width='300'/>
         
         <div className="spacer"></div>

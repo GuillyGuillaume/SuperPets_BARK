@@ -4,30 +4,10 @@ import { getDatabase, ref, set as fbset, onValue } from 'firebase/database';
 import { getAuth } from "firebase/auth";
 
 export function HomeScreen() {
-    const [response, setResponse] =useState("");
-    function handleClick(event){
-        let mood = event.target.value;
-        if(mood == "frustrated"){
-            setResponse("I'm sorry to hear that! What's wrong?")
-        }
-        if (mood == "sad") {
-            setResponse("I hope you get better soon")
-        }
-        if (mood == "normal") {
-            setResponse("What a peaceful day!")
-        }
-        if (mood == "notbad") {
-            setResponse("Wonderful")
-        }
-        if (mood == "happy") {
-            setResponse("I'm happy to hear that!")
-        }
-        // document.getElementById('toggle').className="show";
-    }
     const todayDate = new Date();
     const [name, setName] = React.useState("");
     const [currPet, setPet] = React.useState("");
-    
+
     let currTime = "";
     
     const auth = getAuth();
@@ -71,7 +51,25 @@ export function HomeScreen() {
         }
     }, []);
 
-
+    const [response, setResponse] =useState("");
+    function handleClick(event){
+        let mood = event.target.value;
+        if(mood == "frustrated"){
+            setResponse("Hang in there! You got it!")
+        }
+        if (mood == "sad") {
+            setResponse("I hope you get better soon")
+        }
+        if (mood == "normal") {
+            setResponse("What a peaceful day!")
+        }
+        if (mood == "notbad") {
+            setResponse("Wonderful!")
+        }
+        if (mood == "happy") {
+            setResponse("I'm happy to hear that!")
+        }
+    }
 
 return (
     <section className="content-box">
@@ -85,6 +83,9 @@ return (
             </h1>
             <p>
                 Hi, {name}! How are you feeling right now?
+                <p>
+                    <strong>{response}</strong>
+                </p>
             </p>
             <span className="mood-box">
                 <button className="mood-button" onClick={handleClick} value = "frustrated">😒</button>
@@ -94,9 +95,6 @@ return (
                 <button className="mood-button" onClick={handleClick} value = "happy">😀</button>
             </span>
         </div>
-        <h2>
-            <strong>{response}</strong>
-        </h2>
         <img src={'img/' + currPet} width='300' alt="virtual pet"/>
 
         <div className="spacer"></div>

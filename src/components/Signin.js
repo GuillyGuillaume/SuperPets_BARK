@@ -6,7 +6,6 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     onAuthStateChanged,
-    signOut,
 } from "firebase/auth";
 import { getDatabase, ref, set as fbset} from 'firebase/database';
 import {HomeScreen} from "./Home"
@@ -63,17 +62,13 @@ export function SigninScreen() {
         }
     };
 
-    const logout = async () => {
-        await signOut(auth);
-    };
-
     return (
         <section className="content-box">
             <p className="login-title"><strong>BARK!</strong></p>
 
             <div className='spacer'></div>
             
-            <p>Your Personal Virtual Support Companion</p>
+            <h2>Meet Your Pet Today!</h2>
             <div>
                 <input
                 placeholder="Email..."
@@ -88,11 +83,13 @@ export function SigninScreen() {
                 onChange={(event) => {
                     setRegisterPassword(event.target.value);
                 }}/>
-                <input
-                placeholder="Your Name..."
-                onChange={(event) => {
-                    setRegisterName(event.target.value);
-                }}/>
+                <p>
+                    <input
+                    placeholder="Your Name..."
+                    onChange={(event) => {
+                        setRegisterName(event.target.value);
+                    }}/>
+                </p>
                 <button className="second-btn" onClick={register}><strong>Sign Up</strong></button>
             </div>
 
@@ -114,24 +111,6 @@ export function SigninScreen() {
             </div>
 
             <div className='spacer'></div>
-
-            {user?.email}
-            <button className="primary-btn" onClick={logout}><strong>Log Out</strong></button>
-            <div className='spacer'></div>
-
         </section>
     );
   }
-
-/*
-
-    const logout = async () => {
-        await signOut(auth);
-    };
-
-
-
-{user?.email}
-<button className="primary-btn" onClick={logout}><strong>Log Out</strong></button>
-<div className='spacer'></div>
-*/
