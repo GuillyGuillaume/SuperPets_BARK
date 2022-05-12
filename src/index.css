@@ -196,7 +196,7 @@ main {
 }
 
 .task-card {
-  color: black;
+  color: white;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -257,7 +257,7 @@ main {
 
 .pet-card {
   background-color: #4382CD;
-  color: black;
+  color: white;
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
@@ -274,40 +274,38 @@ main {
 }
 
 /* css for ESA page*/
-.ESATable {
+
+.ESA-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.AnswerTable {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-table, th, td {
-  border: 1px solid;
-}
-
-table {
-  justify-content: center;
   width: 80%;
+  background-color: #4382CD;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
-.AnswerTable {
-  position: static;
+.ESAquiz {
+  display: flex;
+  flex-direction: row;
+}
+
+.quiz-b {
+  color: white;
+}
+
+.gap {
+  flex: 1;
+  flex-grow: 1;
+}
+
+input[type=radio] {
+  border: 0px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .ESA-detail {
-  justify-content: center;
-  padding: 30px;
+  color: black;
 }
 
 /* css for Signin page*/
@@ -351,7 +349,7 @@ table {
 
 
 @media (min-width: 768px) {
-  .chatbox {
+  .chatbox, .ESA-content {
     width: 60%;
   }
 
@@ -385,7 +383,7 @@ table {
 }
 
 @media (min-width: 1200px) {
-  .chatbox {
+  .chatbox, .ESA-content {
     width: 40%;
   }
 
