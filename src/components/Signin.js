@@ -34,7 +34,6 @@ export function SigninScreen() {
                     registerPassword
                 )
                 document.getElementById("psMsg").innerHTML = "Welcome to Bark!";
-                console.log(user);
             } catch(err){
                 console.log(err.message);
             } 
@@ -59,9 +58,7 @@ export function SigninScreen() {
                 loginEmail,
                 loginPassword
             );
-            // const location = HomeScreen();
             Navigate(<HomeScreen />);
-            console.log(user.user.uid);
         } catch (error) {
             console.log(error.message);
         }
