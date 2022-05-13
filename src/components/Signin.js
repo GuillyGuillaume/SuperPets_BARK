@@ -32,21 +32,12 @@ export function SigninScreen() {
                     auth,
                     registerEmail,
                     registerPassword
-
-                // ).catch (err =>{
-                //     if (FirebaseAuthUserCollisionException()) {
-                //         document.getElementById("psMsg").innerHTML = "You already created an account.Please log in!";
-                //     } else if (err instanceof FirebaseAuthInvalidCredentialsException) {
-                //         document.getElementById("psMsg").innerHTML = "Invaild Email";
-                //     } else {
-                //         console.log(err.message);
-                //     } ;
                 )
                 document.getElementById("psMsg").innerHTML = "Welcome to Bark!";
                 console.log(user);
             } catch(err){
-                    console.log(err.message);
-                } 
+                console.log(err.message);
+            } 
             
             
             const db = getDatabase();
@@ -83,48 +74,51 @@ export function SigninScreen() {
             <div className='spacer'></div>
             
             <h2 className='login-text'>Meet Your Pet Today!</h2>
-            <div>
+            <div className='field-block'>
                 <input
+                    className="field"
                     placeholder="Email..."
                     onChange={(event) => {
                         setRegisterEmail(event.target.value);
                     }} />
                 <input
-                    /* image 18 */
-
-                type="password"
-                placeholder="Password..."
-                onChange={(event) => {
-                    setRegisterPassword(event.target.value);
+                    className="field"
+                    type="password"
+                    placeholder="Password..."
+                    onChange={(event) => {
+                        setRegisterPassword(event.target.value);
                 }}/>
                 <p>
                     <input
-                    placeholder="Your Name..."
-                    onChange={(event) => {
-                        setRegisterName(event.target.value);
-                    }}/>
+                        className="field"
+                        placeholder="Your Name..."
+                        onChange={(event) => {
+                            setRegisterName(event.target.value);
+                        }}/>
                 </p>
-                <button className="second-btn" onClick={register}><strong>Sign Up</strong></button>
+                <button className="second-btn" onClick={register}>Sign Up</button>
                 <p id="signupMsg"></p>
             </div>
 
             <div className='spacer'></div>
 
-            <div>
+            <div className='field-block'>
                 <input
+                    className="field"
                     placeholder="Email..."
                     onChange={(event) => {
                         setLoginEmail(event.target.value);
                     }} />
                 <input
+                    className="field"
                     type="password"
                     placeholder="Password..."
                     onChange={(event) => {
                         setLoginPassword(event.target.value);
                     }} />
-                <button className="second-btn" onClick={login}><strong>Log In</strong></button>
+                <button className="second-btn" onClick={login}>Log In</button>
             </div>
-
+            <div className='spacer'></div>
             <div className='spacer'></div>
         </section>
     );

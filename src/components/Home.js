@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import { getDatabase, ref, set as fbset, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 import { getAuth } from "firebase/auth";
 
 export function HomeScreen() {

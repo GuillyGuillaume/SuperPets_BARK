@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import _ from 'lodash';
-import { getDatabase, ref, set as fbset, onValue } from 'firebase/database';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { getDatabase, ref, set as fbset } from 'firebase/database';
 import { getAuth } from "firebase/auth";
-import { NavBar } from './Navigation';
 
 export function PetScreen() {
     const auth = getAuth();

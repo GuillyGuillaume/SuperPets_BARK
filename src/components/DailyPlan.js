@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import _ from 'lodash';
-import { NavBar } from './Navigation';
 import { getDatabase, ref, set as fbset, onValue } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
 import { getAuth } from "firebase/auth";

@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavBar } from './Navigation';
+import { getAuth } from "firebase/auth";
 
 function AboutUsDetails() {
+    const auth = getAuth();
     return (
         <div className="aboutUs-text">
             <h2>Who We Are</h2>

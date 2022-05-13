@@ -316,6 +316,10 @@ input[type=radio] {
   color: black;
 }
 
+.details {
+  font-size: 20px;
+}
+
 /* css for Signin page*/
 .login-title {
   font-family: "MoreSugar";
@@ -328,10 +332,24 @@ input[type=radio] {
   font-family: "MoreSugar";
 }
 
+.field-block {
+  text-align: center;
+}
+
+.field {
+  width: 9rem;
+  height: 2rem;
+  border: 5px black;
+}
+
+.fa-sign-out {
+  font-size: 20px;
+}
+
 .primary-btn {
   background-color: white;
   color: #000F96;
-  width: 333px;
+  width: 300px;
   height: 43px;
   margin: 0 auto;
   margin-top: 15px;
@@ -345,7 +363,7 @@ input[type=radio] {
   background-color: #000F96;
   font-family: "MoreSugar";
   color: white;
-  width: 333px;
+  width: 300px;
   height: 43px;
   margin: 0 auto;
   margin-top: 15px;

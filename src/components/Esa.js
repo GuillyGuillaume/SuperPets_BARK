@@ -77,18 +77,13 @@ export function EsaScreen() {
     return (
         <section className="content-box">
             <h1 className="page-title">ESA Survey</h1>
-            <div className="ESA-detail">
+            <div className="aboutUs-text">
                 <h1>Are you in need of an Emotional Support Animal?</h1>
-                <p>
+                <p className="details">
                     Emotional Support Animal support animals provide companionship,
                     relieve loneliness, and sometimes help with depression, anxiety,
                     and certain phobias, but do not have special training to perform
                     tasks that assist people with disabilities.
-                   
-                </p>
-                <p>
-                    Please recall that, over the last 2 weeks, how often have you been
-                    bothered by any of the following problems?
                 </p>
             </div>
 
