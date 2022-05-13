@@ -318,9 +318,14 @@ input[type=radio] {
 
 /* css for Signin page*/
 .login-title {
+  font-family: "MoreSugar";
   margin-right: auto;
   margin-left: 10%;
   font-size: 5rem;
+}
+
+.login-text {
+  font-family: "MoreSugar";
 }
 
 .primary-btn {
@@ -338,6 +343,7 @@ input[type=radio] {
 
 .second-btn {
   background-color: #000F96;
+  font-family: "MoreSugar";
   color: white;
   width: 333px;
   height: 43px;

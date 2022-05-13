@@ -82,7 +82,7 @@ export function SigninScreen() {
 
             <div className='spacer'></div>
             
-            <h2>Meet Your Pet Today!</h2>
+            <h2 className='login-text'>Meet Your Pet Today!</h2>
             <div>
                 <input
                     placeholder="Email..."
