@@ -2,8 +2,6 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 import React, { useEffect } from 'react';
 import { getAuth } from "firebase/auth";
 
-
-
 export function EsaScreen() {
     const [currPet, setPet] = React.useState("");
     const [qOne, setqOne] = React.useState(0);
@@ -22,7 +20,6 @@ export function EsaScreen() {
         const offFunction = onValue(petRef, (snapshot) => {
             let newValue = snapshot.val(); //extract the value from snapshot
             setPet(newValue);
-            console.log(newValue);
         });
         return () => {
             offFunction();
@@ -135,11 +132,9 @@ export function EsaScreen() {
                 <button className="btn btn-warning" onClick={quizSubmit}>Submit</button>
             </div>
 
-
             {response}
             <img src={'img/' + currPet} width='300'/>
             <div className="spacer"></div>
-            
         </section>
     );
 }

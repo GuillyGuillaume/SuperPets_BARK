@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -8,7 +7,6 @@ import {
     onAuthStateChanged,
 } from "firebase/auth";
 import { getDatabase, ref, set as fbset } from 'firebase/database';
-import { HomeScreen } from "./Home"
 
 
 export function SigninScreen() {
@@ -18,7 +16,6 @@ export function SigninScreen() {
     const [registerName, setRegisterName] = useState("");
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
-    const [confirmPs, setConfirmPs] = useState(false);
     const [user, setUser] = useState({});
 
     onAuthStateChanged(auth, (currentUser) => {
@@ -26,41 +23,35 @@ export function SigninScreen() {
     });
 
     const register = async () => {
-        if (confirmPs == true) {
-            try {
-                const user = await createUserWithEmailAndPassword(
-                    auth,
-                    registerEmail,
-                    registerPassword
-                )
-                document.getElementById("psMsg").innerHTML = "Welcome to Bark!";
-            } catch(err){
-                console.log(err.message);
-            } 
-            
-            
-            const db = getDatabase();
-            const nameRef = ref(db, "users/" + auth.currentUser.uid + "/name")
-            const dailyRef = ref(db, "users/" + auth.currentUser.uid + "/daily")
-            const petRef = ref(db, "users/" + auth.currentUser.uid + "/pet")
-            fbset(nameRef, registerName);
-            fbset(dailyRef, [{
-                "task": "Drink Water!"
-            }]);
-            fbset(petRef, "ham.png");
-        };
-    }
+        try {
+        const user = await createUserWithEmailAndPassword(
+            auth,
+            registerEmail,
+            registerPassword
+        );
+        } catch (error) {
+        console.log(error.message);
+        }
+        const db = getDatabase();
+        const nameRef = ref(db, "users/"+auth.currentUser.uid+"/name")
+        const dailyRef = ref(db, "users/"+auth.currentUser.uid+"/daily")
+        const petRef = ref(db, "users/" + auth.currentUser.uid + "/pet")
+        fbset(nameRef, registerName);
+        fbset(dailyRef, [{
+            "task": "Drink Water!"
+        }]);
+        fbset(petRef, "dog.png");
+    };
 
     const login = async () => {
         try {
-            const user = await signInWithEmailAndPassword(
-                auth,
-                loginEmail,
-                loginPassword
-            );
-            Navigate(<HomeScreen />);
+        const user = await signInWithEmailAndPassword(
+            auth,
+            loginEmail,
+            loginPassword
+        );
         } catch (error) {
-            console.log(error.message);
+        console.log(error.message);
         }
     };
 
@@ -91,7 +82,7 @@ export function SigninScreen() {
                         placeholder="Your Name..."
                         onChange={(event) => {
                             setRegisterName(event.target.value);
-                        }}/>
+                    }}/>
                 </p>
                 <button className="second-btn" onClick={register}>Sign Up</button>
                 <p id="signupMsg"></p>

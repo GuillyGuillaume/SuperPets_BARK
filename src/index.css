@@ -277,8 +277,8 @@ main {
   justify-content: center;
   object-fit: cover;
   border-radius: 10px;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 
 /* css for ESA page*/
@@ -386,8 +386,8 @@ input[type=radio] {
   }
 
   .pet-card>img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
 
   .chatbox>p {
@@ -401,8 +401,8 @@ input[type=radio] {
 
 @media (min-width: 992px) {
   .pet-card>img {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
   }
 
   .chatbox>p {
@@ -420,7 +420,7 @@ input[type=radio] {
   }
 
   .pet-card>img {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
   }
 }
