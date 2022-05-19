@@ -71,7 +71,7 @@ export function DailyScreen() {
             let newValue = snapshot.val(); //extract the value from snapshot
             setPet(newValue);
             setTalkPet("talk_" + newValue);
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setPet("sleep_" + newValue);
                 setDayCycle(false);
             }
@@ -86,7 +86,7 @@ export function DailyScreen() {
         const sentences = ["Well Done!", "Good Job!", "I'm impressed!", "Superb!", "Keep it Up!"]  
         let res = sentences[Math.floor((sentences.length-1) * Math.random())]
         setResponse(res)
-        if(todayDate.getHours() < 20){
+        if(todayDate.getHours() < 20 && todayDate.getHours() > 5){
             setPet(currTalkPet);
             setTimeout(function(){
                 setPet(currPet);

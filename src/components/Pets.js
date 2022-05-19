@@ -12,7 +12,7 @@ export function PetScreen() {
     const todayDate = new Date();
     const [dayCycle, setDayCycle] = React.useState(true);
     useEffect(() => {
-        if(todayDate.getHours() > 20){
+        if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
             setDayCycle(false);
         }
       }, []);

@@ -48,7 +48,7 @@ export function HomeScreen() {
             let newValue = snapshot.val(); //extract the value from snapshot
             setPet(newValue);
             setTalkPet("talk_" + newValue);
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setPet("sleep_" + newValue);
                 setDayCycle(false);
             }
@@ -62,41 +62,41 @@ export function HomeScreen() {
     function handleClick(event){
         let mood = event.target.value;
         if(mood === "frustrated"){
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setResponse("Get some rest! You'll feel better tomorrow!");
             } else {
                 setResponse("Hang in there! You got it!");
             }
         }
         if (mood === "sad") {
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setResponse("Sleep on it! Tomorrow's a new day!");
             } else {
                 setResponse("I hope you get better soon");
             }
         }
         if (mood === "normal") {
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setResponse("When in doubt, sleep!");
             } else {
                 setResponse("What a peaceful day!");
             }
         }
         if (mood === "notbad") {
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setResponse("Sweet Dreams!");
             } else {
                 setResponse("Wonderful!");
             }
         }
         if (mood === "happy") {
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setResponse("ZZZZzzzzz......");
             } else {
                 setResponse("I'm happy to hear that!");
             }
         }
-        if(todayDate.getHours() < 20){
+        if(todayDate.getHours() < 20 && todayDate.getHours() > 5){
             setPet(currTalkPet);
             setTimeout(function(){
                 setPet(currPet);

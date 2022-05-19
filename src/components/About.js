@@ -68,7 +68,9 @@ export function AboutScreen() {
                     <p>Full-Stack Dev</p>
                 </div>
             </div>
-
+            <div>
+                <p>☆ Virtual Companions illustrated by <a href='https://www.instagram.com/i.hopeless.s/'>i.hopeless.s</a> on Instagram ☆</p>
+            </div>
             <div className="spacer"></div>
             <NavBar />
         </section>

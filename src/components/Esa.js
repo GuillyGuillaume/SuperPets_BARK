@@ -23,7 +23,7 @@ export function EsaScreen() {
             let newValue = snapshot.val(); //extract the value from snapshot
             setPet(newValue);
             setTalkPet("talk_" + newValue);
-            if(todayDate.getHours() > 20){
+            if(todayDate.getHours() > 20 || todayDate.getHours() < 5){
                 setPet("sleep_" + newValue);
                 setDayCycle(false);
             }
@@ -75,7 +75,7 @@ export function EsaScreen() {
                 </div>
             )
         }
-        if(todayDate.getHours() < 20){
+        if(todayDate.getHours() < 20 && todayDate.getHours() > 5){
             setPet(currTalkPet);
             setTimeout(function(){
                 setPet(currPet);
