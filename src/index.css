@@ -23,12 +23,31 @@ body {
   margin: 0;
   height: 100%;
 }
-.content-box{
+
+.content-box-day{
   position: absolute;
   min-height: 100%;
   background-image: url(img/background.png);
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: #000F96;
+  align-items: center;
+  width: 100%;
+}
+
+.content-box-night{
+  position: absolute;
+  min-height: 100%;
+  background-image: url(img/background_night.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: #000F96;
+  align-items: center;
+  width: 100%;
 }
 /*about us css*/
 
@@ -168,14 +187,6 @@ main {
   display: flex;
   justify-content: center;
   height: 100%;
-}
-
-.content-box {
-  display: flex;
-  flex-direction: column;
-  color: #000F96;
-  align-items: center;
-  width: 100%;
 }
 
 .chatbox {

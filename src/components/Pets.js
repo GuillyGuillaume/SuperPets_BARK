@@ -2,11 +2,20 @@ import React from 'react';
 import { getDatabase, ref, set as fbset } from 'firebase/database';
 import { getAuth } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+
 
 
 export function PetScreen() {
     const auth = getAuth();
     const navigate = useNavigate();
+    const todayDate = new Date();
+    const [dayCycle, setDayCycle] = React.useState(true);
+    useEffect(() => {
+        if(todayDate.getHours() > 20){
+            setDayCycle(false);
+        }
+      }, []);
 
    
     const dogClick = async () => {
@@ -29,7 +38,7 @@ export function PetScreen() {
     };
     
 return (
-    <section className="content-box">
+    <section className={dayCycle ? "content-box-day" : "content-box-night"}>
         <h1 className="page-title">Virtual Companions</h1>
         <div className="pets">
             <div className="pet-card">

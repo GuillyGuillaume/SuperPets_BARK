@@ -3,6 +3,7 @@ import { NavBar } from './Navigation';
 import { getAuth } from "firebase/auth";
 
 function AboutUsDetails() {
+
     const auth = getAuth();
     return (
         <div className="aboutUs-text">
@@ -38,7 +39,7 @@ function AboutUsDetails() {
 
 export function AboutScreen() {
     return (
-        <section className="content-box">
+        <section className="content-box-day">
             <h1 className="page-title">About Us</h1>
             <AboutUsDetails />
             <div className="aboutUs-cards">

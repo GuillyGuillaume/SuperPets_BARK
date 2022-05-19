@@ -56,7 +56,7 @@ export function SigninScreen() {
     };
 
     return (
-        <section className="content-box">
+        <section className="content-box-day">
             <p className="login-title">BARK!</p>
 
             <div className='spacer'></div>

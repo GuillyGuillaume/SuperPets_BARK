@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import _ from 'lodash';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { getAuth } from "firebase/auth";
 
@@ -7,6 +6,9 @@ export function HomeScreen() {
     const todayDate = new Date();
     const [name, setName] = React.useState("");
     const [currPet, setPet] = React.useState("");
+    const [currTalkPet, setTalkPet] = React.useState("");
+    const [dayCycle, setDayCycle] = React.useState(true);
+
 
     let currTime = "";
     
@@ -45,6 +47,11 @@ export function HomeScreen() {
         const offFunction = onValue(petRef, (snapshot) => {
             let newValue = snapshot.val(); //extract the value from snapshot
             setPet(newValue);
+            setTalkPet("talk_" + newValue);
+            if(todayDate.getHours() > 20){
+                setPet("sleep_" + newValue);
+                setDayCycle(false);
+            }
         });
         return () => {
             offFunction();
@@ -54,25 +61,51 @@ export function HomeScreen() {
     const [response, setResponse] =useState("");
     function handleClick(event){
         let mood = event.target.value;
-        if(mood == "frustrated"){
-            setResponse("Hang in there! You got it!")
+        if(mood === "frustrated"){
+            if(todayDate.getHours() > 20){
+                setResponse("Get some rest! You'll feel better tomorrow!");
+            } else {
+                setResponse("Hang in there! You got it!");
+            }
         }
-        if (mood == "sad") {
-            setResponse("I hope you get better soon")
+        if (mood === "sad") {
+            if(todayDate.getHours() > 20){
+                setResponse("Sleep on it! Tomorrow's a new day!");
+            } else {
+                setResponse("I hope you get better soon");
+            }
         }
-        if (mood == "normal") {
-            setResponse("What a peaceful day!")
+        if (mood === "normal") {
+            if(todayDate.getHours() > 20){
+                setResponse("When in doubt, sleep!");
+            } else {
+                setResponse("What a peaceful day!");
+            }
         }
-        if (mood == "notbad") {
-            setResponse("Wonderful!")
+        if (mood === "notbad") {
+            if(todayDate.getHours() > 20){
+                setResponse("Sweet Dreams!");
+            } else {
+                setResponse("Wonderful!");
+            }
         }
-        if (mood == "happy") {
-            setResponse("I'm happy to hear that!")
+        if (mood === "happy") {
+            if(todayDate.getHours() > 20){
+                setResponse("ZZZZzzzzz......");
+            } else {
+                setResponse("I'm happy to hear that!");
+            }
+        }
+        if(todayDate.getHours() < 20){
+            setPet(currTalkPet);
+            setTimeout(function(){
+                setPet(currPet);
+            }, 500); 
         }
     }
 
 return (
-    <section className="content-box">
+    <section className={dayCycle ? "content-box-day" : "content-box-night"}>
         <h1 className="page-title">Daily Checkin</h1>
 
         <div className="spacer"></div>

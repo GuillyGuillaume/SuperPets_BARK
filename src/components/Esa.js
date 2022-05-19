@@ -4,6 +4,8 @@ import { getAuth } from "firebase/auth";
 
 export function EsaScreen() {
     const [currPet, setPet] = React.useState("");
+    const [currTalkPet, setTalkPet] = React.useState("");
+    const [dayCycle, setDayCycle] = React.useState(true);
     const [qOne, setqOne] = React.useState(0);
     const [qTwo, setqTwo] = React.useState(0);
     const [qThree, setqThree] = React.useState(0);
@@ -12,7 +14,7 @@ export function EsaScreen() {
     const [response, setResponse] = React.useState();
     const db = getDatabase();
     const auth = getAuth();
-
+    const todayDate = new Date();
 
     useEffect(() => {
         const petRef = ref(db, "users/"+auth.currentUser.uid+"/pet") //  dir/key for reference
@@ -20,6 +22,11 @@ export function EsaScreen() {
         const offFunction = onValue(petRef, (snapshot) => {
             let newValue = snapshot.val(); //extract the value from snapshot
             setPet(newValue);
+            setTalkPet("talk_" + newValue);
+            if(todayDate.getHours() > 20){
+                setPet("sleep_" + newValue);
+                setDayCycle(false);
+            }
         });
         return () => {
             offFunction();
@@ -68,11 +75,16 @@ export function EsaScreen() {
                 </div>
             )
         }
-        
+        if(todayDate.getHours() < 20){
+            setPet(currTalkPet);
+            setTimeout(function(){
+                setPet(currPet);
+            }, 500); 
+        }
     }
 
     return (
-        <section className="content-box">
+        <section className={dayCycle ? "content-box-day" : "content-box-night"}>
             <h1 className="page-title">ESA Survey</h1>
             <div className="aboutUs-text">
                 <h1>Are you in need of an Emotional Support Animal?</h1>

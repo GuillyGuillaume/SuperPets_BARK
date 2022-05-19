@@ -46,6 +46,8 @@ export function DailyScreen() {
     const todayDate = new Date();
     const currDate = todayDate.getMonth() + "-" + todayDate.getDay();
     const [currPet, setPet] = React.useState("");
+    const [currTalkPet, setTalkPet] = React.useState("");
+    const [dayCycle, setDayCycle] = React.useState(true);
     const [response, setResponse] = useState("");
 
     const db = getDatabase();
@@ -68,7 +70,11 @@ export function DailyScreen() {
         const offFunction = onValue(petRef, (snapshot) => {
             let newValue = snapshot.val(); //extract the value from snapshot
             setPet(newValue);
-            console.log(newValue);
+            setTalkPet("talk_" + newValue);
+            if(todayDate.getHours() > 20){
+                setPet("sleep_" + newValue);
+                setDayCycle(false);
+            }
         });
         return () => {
             offFunction();
@@ -80,6 +86,12 @@ export function DailyScreen() {
         const sentences = ["Well Done!", "Good Job!", "I'm impressed!", "Superb!", "Keep it Up!"]  
         let res = sentences[Math.floor((sentences.length-1) * Math.random())]
         setResponse(res)
+        if(todayDate.getHours() < 20){
+            setPet(currTalkPet);
+            setTimeout(function(){
+                setPet(currPet);
+            }, 500); 
+        }
     }
 
     const addTodo = text => {
@@ -95,12 +107,8 @@ export function DailyScreen() {
         randomResponse();
     };
 
-    function handleClick() {
-        navigate('/weeklyPlan')
-    }
-
     return (
-        <section className="content-box">
+        <section className={dayCycle ? "content-box-day" : "content-box-night"}>
         <h1 className="page-title">Daily Reminders</h1>
         <div className="spacer"></div>
         <div className="daily-tasks">
@@ -115,7 +123,7 @@ export function DailyScreen() {
         <div className="chatbox">
             <p>
                 These are your tasks for today!
-                <p>{response}</p>
+                <p><strong>{response}</strong></p>
             </p>
         </div>
         
